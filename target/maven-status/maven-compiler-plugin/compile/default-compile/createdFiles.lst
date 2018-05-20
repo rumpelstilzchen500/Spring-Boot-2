@@ -1,0 +1,12 @@
+com\rumpel\model\Message.class
+com\rumpel\model\Role.class
+com\rumpel\model\User.class
+com\rumpel\repos\UserRepo.class
+com\rumpel\Application.class
+com\rumpel\config\MvcConfig.class
+com\rumpel\controller\MainController.class
+com\rumpel\repos\MessageRepo.class
+com\rumpel\service\UserService.class
+com\rumpel\controller\UserController.class
+com\rumpel\config\WebSecurityConfig.class
+com\rumpel\controller\RegistrationController.class
