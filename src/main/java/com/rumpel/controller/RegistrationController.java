@@ -12,22 +12,24 @@ import java.util.Collections;
 import java.util.Map;
 
 @Controller
-public class RegistrationController{
+public class RegistrationController {
     @Autowired
     private UserRepo userRepo;
 
     @GetMapping("/registration")
-    public String registration(){
+    public String registration() {
         return "registration";
     }
 
     @PostMapping("/registration")
     public String addUser(User user/*приходить будет пользователь*/, Map<String,Object> model){
         User userFromDb = userRepo.findByUsername(user.getUsername());
-        if(userFromDb !=null){
-            model.put("message", "User exists");
+
+        if (userFromDb != null) {
+            model.put("message", "User exists!");
             return "registration";
         }
+
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));//Collections.singleton() - создает Set с одним единственным значением
         userRepo.save(user);

@@ -3,6 +3,6 @@
 
 
 <@c.page>
-    <div>Hello  user</div>
-    <a href="/main">Main page</a>
+<h5>Hello, guest</h5>
+<div>MAIN</div>
 </@c.page>

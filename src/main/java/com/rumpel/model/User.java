@@ -17,11 +17,14 @@ public class User implements UserDetails {
     private String password;
     private boolean active; // признак активности
 
-    @ElementCollection (targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable (name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles; // для создания ролевой системы (админ или пользователи или привелигированый пользователь (например модератор))
 
+    public boolean isAdmin(){
+        return roles.contains(Role.ADMIN);
+    }
 
     public Long getId() {
         return id;
